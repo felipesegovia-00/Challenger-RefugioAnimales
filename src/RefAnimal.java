@@ -20,7 +20,7 @@ public class RefAnimal {
             System.out.println("3. Marcar animal como adoptado");
             System.out.println("4. Mostrar animales disponibles");
             System.out.println("5. mostrar animales adoptados");
-            System.out.println("6.mostrar reporte general");
+            System.out.println("6. mostrar reporte general");//Aqui arregle por el estaba muy pegado
             System.out.println("7. Salir");
             System.out.print("Select an option: ");
             opcion = sc.nextInt();
@@ -53,6 +53,11 @@ public class RefAnimal {
                 case 5 -> {//dafne
                     System.out.println("Animales adoptados:");
                     // Aquí se mostrarían los animales adoptados
+                    for (int i = 0; i < contadorAnimales; i++) {
+                        if (estados[i].equals("Adoptado")) {
+                            System.out.println((i + 1) + ". " + animales[i] + " - " + estados[i]);
+                        } 
+                    }
                 }
                 case 6 -> {//renato
                     int adoptados = 0;
@@ -83,7 +88,7 @@ public class RefAnimal {
             }
         } while (opcion != 7);
 
-
-
+        // Faltaba cerrar el scanner 
+        sc.close();
     }
 }
