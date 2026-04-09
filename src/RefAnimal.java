@@ -9,6 +9,8 @@ public class RefAnimal {
         String[] especies = new String[100]; // Array para almacenar las especies de los animales
         String[] estados = new String[100]; // Array para almacenar los estados de los animales
         int contadorAnimales = 0; // Contador para llevar el número de animales registrados
+        String[] catalogoEspecies = new String[50]; // Catálogo de especies disponibles
+        int contadorEspecies = 0;
 
         int opcion;
         do {
@@ -31,7 +33,8 @@ public class RefAnimal {
 
 
                     System.out.println("Nombre del animal: ");
-                    String nombre = sc.next().trim();
+                    sc.nextLine(); // Consumir el salto de línea pendiente
+                    String nombre = sc.nextLine().trim();
 
                     //1. Validar si el nombre ya existe
                     boolean duplicado = false;
@@ -40,13 +43,13 @@ public class RefAnimal {
                             duplicado = true;
                         }
                     }
-                    //2. Validar si la especie existe
+                    //2. Validar si la especie existe en el catálogo
                     System.out.println("Especie: ");
-                    String especieInput = sc.next().trim();
+                    String especieInput = sc.nextLine().trim();
 
                     boolean especieValida = false;
-                    for (int i = 0; i < contadorAnimales; i++) {
-                        if (especies[i].equalsIgnoreCase(especieInput)) {
+                    for (int i = 0; i < contadorEspecies; i++) {
+                        if (catalogoEspecies[i].equalsIgnoreCase(especieInput)) {
                             especieValida = true;
                         }
                     }
@@ -80,6 +83,7 @@ public class RefAnimal {
                 case 3 -> {//felipe
                     System.out.print("Ingresa el ID del animal a marcar como adoptado: ");
                     int idAnimal = sc.nextInt();
+
                 }
                 case 4 -> {//Allan
                     System.out.println("Animales disponibles:");
