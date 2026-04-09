@@ -75,10 +75,14 @@ public class RefAnimal {
                   }
                 }
                 case 2 -> {//bruno
+                    sc.nextLine(); // Consumir salto de línea pendiente
                     System.out.print("Ingresa el nombre de la especie: ");
-                    String nombreEspecie = sc.nextLine();
+                    String nombreEspecie = sc.nextLine().trim();
                     System.out.print("Ingresa la descripción de la especie: ");
                     String descripcionEspecie = sc.nextLine();
+                    catalogoEspecies[contadorEspecies] = nombreEspecie;
+                    contadorEspecies++;
+                    System.out.println("Especie registrada correctamente.");
                 }
                 case 3 -> {//felipe
                     System.out.print("Ingresa el ID del animal a marcar como adoptado: ");
